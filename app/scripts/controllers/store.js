@@ -13,8 +13,8 @@ angular.module('sneakersApp')
   	this.cart = [];
 
   	/**
-  	 * Add product on cart
-  	 * @param {[type]} product
+  	 * @description Add product on cart
+  	 * @param {object} product
   	 */
   	this.addToCart = function(product) {
   		if (this.cart.length === 0) {
@@ -35,9 +35,9 @@ angular.module('sneakersApp')
   	};
 
   	/**
-  	 * Remove product from cart
-  	 * @param  {[type]} product [description]
-  	 * @return {[type]}
+  	 * @description Remove item from cart
+  	 * @param  {object} product
+  	 * @return {void}
   	 */
   	this.removeFromCart = function(product) {
   		var index = this.cart.indexOf(product);
