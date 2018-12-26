@@ -1,8 +1,22 @@
 <div class="row">
+	<!-- Products -->
 	<div class="col-md-12" ng-repeat="product in store.products">
 		<img ng-src="images/{{product.image}}" alt="{{product.name}}">
 		<h2>{{product.brand}}</h2>
 		<h3>{{product.name}}</h3>
 		<p>Price: {{product.price | currency}}</p>
+		<button class="btn btn-primary" ng-click="store.addToCart(product)">Add to cart</button>
+		<p class="text-danger">{{product.limit}}</p>
+	</div>
+
+	<!-- Cart -->
+	<div class="col-md-12">
+		<ul class="list-group">
+			<li class="list-group-item" ng-repeat="product in store.cart">
+				<h4>{{product.brand}}</h4>
+				<h5>{{product.name}}</h5>
+				<p>{{product.price | currency}}</p>
+			</li>
+		</ul>
 	</div>
 </div>
