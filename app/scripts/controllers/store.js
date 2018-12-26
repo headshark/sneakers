@@ -12,6 +12,10 @@ angular.module('sneakersApp')
   	this.products = storeWarehouse.getProducts();
   	this.cart = [];
 
+  	/**
+  	 * Add product on cart
+  	 * @param {[type]} product
+  	 */
   	this.addToCart = function(product) {
   		if (this.cart.length === 0) {
 			this.cart.push(product);
@@ -28,5 +32,16 @@ angular.module('sneakersApp')
   				this.cart.push(product);
   			}
   		}
+  	};
+
+  	/**
+  	 * Remove product from cart
+  	 * @param  {[type]} product [description]
+  	 * @return {[type]}
+  	 */
+  	this.removeFromCart = function(product) {
+  		var index = this.cart.indexOf(product);
+  		this.cart.splice(index, 1);
+  		product.limit = '';
   	};
   }]);

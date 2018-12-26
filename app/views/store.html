@@ -16,6 +16,7 @@
 				<h4>{{product.brand}}</h4>
 				<h5>{{product.name}}</h5>
 				<p>{{product.price | currency}}</p>
+				<button class="btn btn-danger" ng-click="store.removeFromCart(product)">Remove</button>
 			</li>
 		</ul>
 	</div>
