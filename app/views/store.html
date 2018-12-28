@@ -1,12 +1,14 @@
 <div class="row">
 	<!-- Products -->
-	<div class="col-md-12" ng-repeat="product in store.products">
-		<img ng-src="images/{{product.image}}" alt="{{product.name}}">
-		<h2>{{product.brand}}</h2>
-		<h3>{{product.name}}</h3>
-		<p>Price: {{product.price | currency}}</p>
-		<button class="btn btn-primary" ng-click="store.addToCart(product)">Add to cart</button>
-		<p class="text-danger">{{product.limit}}</p>
+	<div class="product-container col-md-4" ng-repeat="product in store.products track by $index">
+		<img class="sneaker-img" ng-src="images/{{product.image}}" alt="{{product.name}}">
+		<div class="product-details">
+			<h2 class="product-brand">{{product.brand}}</h2>
+			<h3 class="product-name">{{product.name}}</h3>
+			<span class="product-price">{{product.price | currency}}</span>
+		</div>
+		<button class="btn product-btn" ng-click="store.addToCart(product, $index)">Add to cart</button>
+		<div class="product-limit" ng-show="$index === store.selectedProduct">{{product.limit}}</div>
 	</div>
 
 	<!-- Cart -->
