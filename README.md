@@ -1,7 +1,6 @@
-# sneakers
+# SNEAKERS
 
-This project is generated with [yo angular generator](https://github.com/yeoman/generator-angular)
-version 0.16.0.
+The SNEAKERS website is a delightful project created to explore Angular by building a simple sneaker shopping site.
 
 ## Build & development
 
