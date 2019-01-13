@@ -9,9 +9,13 @@
  */
 angular.module('sneakersApp')
   .controller('StoreCtrl', ['storeWarehouse', function(storeWarehouse) {
-  	this.products = storeWarehouse.getProducts();
+  	var vm = this;
   	this.cart = [];
     this.selectedProduct;
+
+    storeWarehouse.getProducts().then(function(data) {
+      vm.products = data;
+    });
 
   	/**
   	 * @description Add product on cart
@@ -19,7 +23,7 @@ angular.module('sneakersApp')
   	 */
   	this.addToCart = function(product, index) {
   		if (this.cart.length === 0) {
-			this.cart.push(product);
+			  this.cart.push(product);
   		} else {
   			var repeat = false;
   			for (var i=0; i<this.cart.length; i++) {
